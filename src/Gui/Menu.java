@@ -1,6 +1,6 @@
 package Gui;
 
-import objetos.Predictor;
+import Objects.Predictor;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -43,7 +43,7 @@ public class Menu extends JFrame {
         predictButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Predictor p = new Predictor(licensePlatetextField.getText(), "", "", "");
+                Predictor p = new Predictor(licensePlatetextField.getText(), yearTextField.getText(), monthTextField.getText(), dayTextField.getText());
             }
         });
     }

@@ -1,23 +1,22 @@
 package Objects;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Predictor {
 
-    private static final Character ROJO = 'R';
-    private static final Character YELOW = 'Y';
-    private static final Character GREEN = 'G';
+    private static  final char PAR = 'P';
+    private static  final char IMPAR = 'I';
 
     private String licensePlate;
     private String year;
     private String month;
     private String day;
 
-    private Character lastDigit;
-    private Map<String, String> availableList;
-
+    private Integer lastDigit;
+    private List<String> availableDays;
 
 
     public Predictor(String licensePlate, String year, String month, String day) {
@@ -25,81 +24,36 @@ public class Predictor {
         this.year = year;
         this.month = month;
         this.day = day;
+        this.lastDigit = getLastDigit(licensePlate);
+        this.availableDays = new ArrayList<>();
     }
 
-    public void predict(){
-        this.lastDigit = getPlateLastNumber(licensePlate);
-    }
+    private String verifyAvailability() {
+        Character type = getEvenOrOdd(lastDigit);
 
-    private Character getPlateLastNumber(String licensePlate) {
-        return licensePlate.charAt(licensePlate.length() - 1);
-    }
-
-    private String verifyAvailability(){
-        availableList = new HashMap<>();
-        switch (lastDigit){
-            case '0':
-                availableList.put("","");
-                break;
-            case '1':
-                break;
-            case '2':
-                break;
-            case '3':
-                break;
-            case '4':
-                break;
-            case '5':
-                break;
-            case '6':
-                break;
-            case '7':
-                break;
-            case '8':
-                break;
-            case '9':
-                break;
-        }
         return "";
     }
 
-    public String getLicensePlate() {
-        return licensePlate;
+    private List<String> availabilityForPlateNumber(Character type){
+        switch (type){
+            case PAR:
+                break;
+            case IMPAR:
+                break;
+        }
+        return availableDays;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    private Integer getLastDigit(String licensePlate) {
+        String lastDigitText = String.valueOf(licensePlate.charAt(licensePlate.length() - 1));
+        return Integer.parseInt(lastDigitText);
     }
 
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public Character getLastDigit() {
-        return lastDigit;
-    }
-
-    public void setLastDigit(Character lastDigit) {
-        this.lastDigit = lastDigit;
+    private Character getEvenOrOdd(Integer lastDigit) {
+        if (lastDigit % 2 == 0) {
+            return PAR;
+        } else {
+            return IMPAR;
+        }
     }
 }
