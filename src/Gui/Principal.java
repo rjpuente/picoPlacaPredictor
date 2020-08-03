@@ -124,6 +124,10 @@ public class Principal extends JFrame {
     private Boolean validatePlateNumber() {
         String text = licensePlateTextField.getText();
         if (validateEmptyFields(text, Constants.PLATE_TYPE)) {
+            if (text.length() < Constants.PLATE_NUMBER_LENGTH) {
+                Constants.showMessage(Constants.PLATE_NOT_VALID);
+                return false;
+            }else{
             text = text.replace('-', '0');
             licensePlateTextField.setText(text);
             for (int i = 0; i < text.length(); i++) {
@@ -136,6 +140,7 @@ public class Principal extends JFrame {
                     return false;
                 }
             }
+        }
         }else {
             return false;
         }

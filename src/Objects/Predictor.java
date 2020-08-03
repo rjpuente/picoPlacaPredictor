@@ -56,10 +56,10 @@ public class Predictor {
             case Constants.TYPE_TUESDAY:
                 availablePlatesList.addAll(Arrays.asList(Constants.PLATE_NUMBER_THREE, Constants.PLATE_NUMBER_FOUR));
                 break;
-            case Constants.TYPE_THURSDAY:
+            case Constants.TYPE_WEDNESDAY:
                 availablePlatesList.addAll(Arrays.asList(Constants.PLATE_NUMBER_FOUR, Constants.PLATE_NUMBER_FIVE));
                 break;
-            case Constants.TYPE_WEDNESDAY:
+            case Constants.TYPE_THURSDAY:
                 availablePlatesList.addAll(Arrays.asList(Constants.PLATE_NUMBER_SIX, Constants.PLATE_NUMBER_SEVEN));
                 break;
             case Constants.TYPE_FRIDAY:
