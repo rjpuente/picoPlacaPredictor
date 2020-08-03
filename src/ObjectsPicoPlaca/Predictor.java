@@ -1,4 +1,4 @@
-package Objects;
+package ObjectsPicoPlaca;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -79,6 +79,8 @@ public class Predictor {
                 || (hour >= Constants.START_HOUR_PM && hour <= Constants.FINISH_HOUR_PM)
                 && (minutes <= Constants.FINISH_MINUTES)) {
             availability = Constants.NOT_AVAILABLE;
+        }else {
+            availability = Constants.AVAILABLE;
         }
     }
 
@@ -90,7 +92,7 @@ public class Predictor {
             dayOfTheWeek = new SimpleDateFormat("EEEEE", Locale.ENGLISH).format(date);
         } catch (ParseException pe) {
             pe.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Ups date typed it´s wrong!");
+            Constants.showMessage(Constants.DATE_NOT_VALID);
         }
         return dayOfTheWeek;
     }
