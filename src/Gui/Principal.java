@@ -30,7 +30,7 @@ public class Principal extends JFrame {
 
     public Principal(String title) {
         super(title);
-
+        setTextOnCenter();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
@@ -250,5 +250,15 @@ public class Principal extends JFrame {
         } else {
             return true;
         }
+    }
+
+    private void setTextOnCenter(){
+        licensePlateTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        yearTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        monthTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        dayTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        hourTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        minutesTextField.setHorizontalAlignment(SwingConstants.CENTER);
+        responseTextArea.setEditable(false);
     }
 }
