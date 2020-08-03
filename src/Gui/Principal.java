@@ -1,8 +1,8 @@
 package Gui;
 
 
-import ObjectsPicoPlaca.Constants;
-import ObjectsPicoPlaca.Predictor;
+import Objects.Constants;
+import Objects.Predictor;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -250,12 +250,5 @@ public class Principal extends JFrame {
         } else {
             return true;
         }
-    }
-
-
-    public static void main(String[] args) {
-        JFrame frame = new Principal("Pico y Placa predictor");
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
     }
 }

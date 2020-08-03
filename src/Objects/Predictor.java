@@ -1,8 +1,7 @@
-package ObjectsPicoPlaca;
+package Objects;
 
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;

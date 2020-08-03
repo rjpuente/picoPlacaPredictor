@@ -1,4 +1,4 @@
-package ObjectsPicoPlaca;
+package Objects;
 
 import javax.swing.*;
 
