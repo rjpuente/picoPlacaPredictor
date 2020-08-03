@@ -58,7 +58,7 @@ public class Constants {
     /*
      * Availability messages
      */
-    public static final String AVAILABLE = "Your plate number is able to transit";
+    public static final String AVAILABLE = "Your plate number is able to transit on ";
     public static final String NOT_AVAILABLE = "Your plate number is not available to transit";
 
     /*

@@ -38,7 +38,7 @@ public class Principal extends JFrame {
             if (validateFields()) {
                 Predictor p = new Predictor(licensePlateTextField.getText(), getConcatenatedDate(),
                         stringToInteger(hourTextField.getText()), stringToInteger(minutesTextField.getText()));
-                responseTextArea.setText(p.getAvailability());
+                responseTextArea.setText(p.getAvailability() + "," + getConcatenatedDate());
             }
         });
         yearTextField.addKeyListener(new KeyAdapter() {

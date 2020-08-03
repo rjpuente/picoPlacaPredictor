@@ -159,7 +159,11 @@
       </hspacer>
       <hspacer id="44a0e">
         <constraints>
-          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="10"/>
+            <preferred-size width="-1" height="10"/>
+            <maximum-size width="-1" height="10"/>
+          </grid>
         </constraints>
       </hspacer>
     </children>

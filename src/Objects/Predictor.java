@@ -9,6 +9,7 @@ import java.util.*;
 public class Predictor {
 
     private String availability;
+    private final String dayOfTheWeek;
     //List of license plates availables
     private final List<Integer> availablePlatesList;
 
@@ -17,16 +18,16 @@ public class Predictor {
         availability = "";
         availablePlatesList = new ArrayList<>();
         Integer lastDigit = getLastDigit(licensePlate);
-        String dayOfTheWeek = getDayOfTheWeek(dateText);
-        getAvailabilityFromDay(dayOfTheWeek);
-        if(getPlateNumberAvailability(lastDigit)){
+        this.dayOfTheWeek = getDayOfTheWeek(dateText);
+        getAvailabilityFromDay();
+        if (getPlateNumberAvailability(lastDigit)) {
             getTimeAvailability(hour, minutes);
-        }else{
-            availability = Constants.AVAILABLE;
+        } else {
+            availability = Constants.AVAILABLE + dayOfTheWeek;
         }
     }
 
-    private void getAvailabilityFromDay(@NotNull String dayOfTheWeek) {
+    private void getAvailabilityFromDay() {
         switch (dayOfTheWeek) {
             case Constants.MONDAY:
                 fillAvailablePlateNumbersList(Constants.TYPE_MONDAY);
@@ -78,8 +79,8 @@ public class Predictor {
                 || (hour >= Constants.START_HOUR_PM && hour <= Constants.FINISH_HOUR_PM)
                 && (minutes <= Constants.FINISH_MINUTES)) {
             availability = Constants.NOT_AVAILABLE;
-        }else {
-            availability = Constants.AVAILABLE;
+        } else {
+            availability = Constants.AVAILABLE + dayOfTheWeek;
         }
     }
 
