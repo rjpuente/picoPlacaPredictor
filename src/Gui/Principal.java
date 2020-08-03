@@ -147,7 +147,7 @@ public class Principal extends JFrame {
         if (validateEmptyFields(text, Constants.YEAR_TYPE)) {
             try {
                 Integer year = stringToInteger(text);
-                if (year <= 2010) {
+                if (year < 2010) {
                     Constants.showMessage(Constants.DOESNT_EXIST);
                     return false;
                 }
